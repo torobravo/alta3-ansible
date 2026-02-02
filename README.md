@@ -29,3 +29,16 @@ To display the list of inventory or hosts run the following command:
 
     ansible-inventory --graph
 ```
+
+To see defaults Ansible currently has set, run the following. It will dump all of Ansible's current configuration settings.
+
+```shell
+    ansible-config dump
+```
+
+If you want to generate a "complete" ansible.cfg file to examine, you can do so with the following command.
+
+```shell
+    ansible-config init --disabled -t all > ansible-example.cfg
+```
+
