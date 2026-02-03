@@ -42,3 +42,8 @@ If you want to generate a "complete" ansible.cfg file to examine, you can do so 
     ansible-config init --disabled -t all > ansible-example.cfg
 ```
 
+To run playbook 'tags'
+
+```shell
+    ansible-playbook ~/mycode/playbook-crewauto.yml --tags="cargo"
+```
