@@ -4,10 +4,11 @@ Collections are a distribution format (zipped tar file) for Ansible content that
 Resources:
 
 (Installing Collections)[https://docs.ansible.com/ansible/latest/collections_guide/collections_installing.html]
+
 (Ansible Galaxy)[https://galaxy.ansible.com/ui/]
 
 ## Slides
-[./Slide1.png]
+(./Slide1.png)
 
 [./Slide2.png]
 
