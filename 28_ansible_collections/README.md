@@ -10,19 +10,19 @@ Resources:
 ## Slides
 ![Alt text](./Slide1.png)
 
-![Alt text][./Slide2.png]
+![Alt text](./Slide2.png)
 
-![Alt text][./Slide3.png]
+![Alt text](./Slide3.png)
 
-![Alt text][./Slide4.png]
+![Alt text](./Slide4.png)
 
-![Alt text][./Slide5.png]
+![Alt text](./Slide5.png)
 
-![Alt text][./Slide6.png]
+![Alt text](./Slide6.png)
 
-![Alt text][./Slide7.png]
+![Alt text](./Slide7.png)
 
-![Alt text][./Slide8.png]
+![Alt text](./Slide8.png)
 
-![Alt text][./Slide9.png]
+![Alt text](./Slide9.png)
 
