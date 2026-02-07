@@ -4,9 +4,9 @@ Alta 3 Course: Introduction to Ansible
 ## Installing Ansible on Windows
 
 Open a command prompt and load WSL (Windows Subsystem for Linux)
-    1. Install Python (```sudo apt install python3```)
-    2. Install Pip (```sudo apt install python3-pip```)
-    3. Install Ansible (```pip install ansible```)
+1. Install Python (```sudo apt install python3```)
+2. Install Pip (```sudo apt install python3-pip```)
+3. Install Ansible (```pip install ansible```)
 
 ## Commands
 
