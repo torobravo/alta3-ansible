@@ -1,0 +1,20 @@
+---
+- name: Using the arista_backup role we created
+  hosts: eosswitches  # This playbook runs on all inventory hosts
+  connection: network_cli  # Use network CLI to connect to switches
+  gather_facts: yes  # Enable fact gathering for device-specific variables
+
+  vars:
+    ansible_network_os: eos  # Specify the operating system for Arista switches
+
+  vars_files:
+    - ~/switch.creds  # Load credentials for the switches
+
+  roles:
+    - arista_backup  # Call the arista_backup role we created
+
+  tasks:
+    # Example task to show playbook progress
+    - name: Print a message
+      debug:
+        msg: "The roles section will run before any tasks."

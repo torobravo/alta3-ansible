@@ -1,0 +1,38 @@
+---
+# Main tasks file for the arista_backup role
+
+# Gather facts specific to Arista EOS switches
+- name: Collect Arista EOS facts
+  eos_facts:
+    gather_subset: all  # Collect all EOS-specific facts
+  when: ansible_network_os == "eos"
+
+# Get the current date for use in the backup directory name
+- name: Get the current date
+  command: date "+%Y-%m-%d"
+  register: result
+  vars:
+    ansible_connection: local
+
+# Store the date in a variable for easier reuse
+- name: Set the current date as a variable
+  set_fact:
+    date_now: "{{ result.stdout }}"
+
+# Create a directory for backups, named with the current date
+- name: Create a directory to save switch backups
+  file:
+    path: "~/mycode/backup/{{ date_now }}/"
+    state: directory  # Ensure the directory exists
+
+# Save the switch configuration to a file in the backup directory
+- name: Save the current switch configuration
+  copy:
+    content: "{{ ansible_net_config }}"
+    dest: "~/mycode/backup/{{ date_now }}/{{ inventory_hostname }}-config.backup"
+
+# Archive the backup file for easier storage
+- name: Archive the switch configuration backup
+  archive:
+    path: "~/mycode/backup/{{ date_now }}/{{ inventory_hostname }}-config.backup"
+    remove: true  # Remove the original file after archiving
