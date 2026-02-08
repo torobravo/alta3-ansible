@@ -1,0 +1,26 @@
+---
+- name: Test my custom collection
+  hosts: localhost
+  gather_facts: no
+
+  collections:
+    - alta3.mycollection
+
+  tasks:
+    - name: Fetch APOD for a specific date using the module
+      alta3.mycollection.apod:
+        api_key: DEMO_KEY
+        date: "2024-11-20"
+      register: apod_result
+
+    - name: Debug the result
+      debug:
+        var: apod_result
+
+    - name: Use the apod_downloader role
+      include_role:
+        name: alta3.mycollection.apod_downloader
+      vars:
+        apod_api_key: DEMO_KEY
+        apod_count: 2
+        apod_download_dir: /home/student/apod_images
