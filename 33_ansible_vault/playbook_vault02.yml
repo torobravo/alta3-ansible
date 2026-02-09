@@ -1,0 +1,12 @@
+---
+- name: Extra vars vault
+  connection: local
+  hosts: localhost
+  gather_facts: no
+
+  # note that we don't have a vars_files section here!
+
+  tasks:
+    - name: print out encrypted vars
+      ansible.builtin.debug:
+        msg: "{{ imscloud }}"

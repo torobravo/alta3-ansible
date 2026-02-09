@@ -1,0 +1,13 @@
+---
+- name: Vault ID test
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars_files:
+    - vars/vaultidtest.yml
+
+  tasks:
+    - name: show secret
+      ansible.builtin.debug:
+        msg: "{{ vaultid }}"
